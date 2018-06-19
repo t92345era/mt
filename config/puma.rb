@@ -1,9 +1,7 @@
 _proj_path = "#{File.expand_path("../..", __FILE__)}"
 _proj_name = File.basename(_proj_path)
-#_home = ENV.fetch("HOME") { "/var" }
-_home = "/var"
-pidfile "#{_home}/run/puma/rails_#{_proj_name}.pid"
-bind "unix:#{_home}/run/puma/rails_#{_proj_name}.sock"
+pidfile "/var/run/puma/rails_#{_proj_name}.pid"
+bind "unix:/var/run/puma/rails_#{_proj_name}.sock"
 directory _proj_path
 
 # Puma can serve each request in a thread from an internal thread pool.
