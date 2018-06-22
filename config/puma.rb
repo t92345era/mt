@@ -1,8 +1,12 @@
-_proj_path = "#{File.expand_path("../..", __FILE__)}"
-_proj_name = File.basename(_proj_path)
-pidfile "/var/run/puma/rails_#{_proj_name}.pid"
-bind "unix:/var/run/puma/rails_#{_proj_name}.sock"
-directory _proj_path
+
+
+if ENV["USER"] == "unicef" 
+  _proj_path = "#{File.expand_path("../..", __FILE__)}"
+  _proj_name = File.basename(_proj_path)
+  pidfile "/var/run/puma/rails_#{_proj_name}.pid"
+  bind "unix:/var/run/puma/rails_#{_proj_name}.sock"
+  directory _proj_path
+end
 
 # Puma can serve each request in a thread from an internal thread pool.
 # The `threads` method setting takes two numbers: a minimum and maximum.

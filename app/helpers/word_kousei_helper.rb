@@ -1,0 +1,2 @@
+module WordKouseiHelper
+end
