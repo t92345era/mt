@@ -11,8 +11,18 @@ class YahooKeitaiso < ApiClient
   CLIENT_ID = "dj00aiZpPUs1UDFxcnlXQTZUOSZzPWNvbnN1bWVyc2VjcmV0Jng9Mzc-"
 
   ##
-  # 形態素解析の実行
+  # 日本語形態素解析の実行
   # @param sentence 解析対象のテキスト
+  # @return 形態素解析の結果
+  # [
+  #   {
+  #     Surface: "庭"    //形態素の表記
+  #     reading: "にわ"  //形態素の読みがな
+  #     pos: "名詞"      //形態素の品詞
+  #   }
+  #   , 
+  #   ...
+  # ]
   def exec(sentence) 
 
     # URLおよびクエリパラメタ設定

@@ -57,5 +57,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'ruby-debug-ide'
 gem 'debase'
 
+# jquery
+gem "jquery-rails"
+
 # react
 gem 'react-rails'

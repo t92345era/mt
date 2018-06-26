@@ -7,6 +7,7 @@ class ApiClient
   ##
   # GETリクエストを送信し、そのレスポンスを取得する
   # @param url リクエストURL
+  # @return レスポンス
   def get_request(url, use_ssl = true)
 
     req = Net::HTTP::Get.new(url.request_uri)

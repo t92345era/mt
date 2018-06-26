@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   # 文書校正のルーティング
   def set_up_word_kousei_routes
     get  '/work-kousei', to: 'word_kousei#index'
+    post '/work-kousei/ap/kousei', to: 'word_kousei#api_kousei'
+    
     # get  '/stock-graph/ap/stock-history', to: 'stock_graph#api_stock_history'
     # get  '/stock-graph/upload/history', to: 'stock_graph#import_csv'
     # post '/stock-graph/upload/history.do', to: 'stock_graph#do_import_csv'
