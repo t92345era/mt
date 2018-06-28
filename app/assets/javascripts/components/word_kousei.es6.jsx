@@ -8,9 +8,8 @@ class WordKousei extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: 'James',
       source_text: "",
-      kousei_list: []
+      summary: null
     }
   }
 
@@ -25,7 +24,7 @@ class WordKousei extends React.Component {
   handleSend() {
     this.sendKoseiData().then(data => {
       this.setState({
-        kousei_list: data
+        summary: data
       });
     }, err => {
       alert(err);
@@ -60,11 +59,10 @@ class WordKousei extends React.Component {
   <div>
     <p>処理結果</p>
     <div>
-      {this.state.kousei_list.map((item, i)=> {
+      {this.state.summary != null && this.state.summary.map((item, i)=> {
       return (
         <div key={i}>
-          {i}:
-          {item.Surface}
+          ["{item[0]}","{item[1]}"]
         </div>
       );
       })}

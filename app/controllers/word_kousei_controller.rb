@@ -16,8 +16,8 @@ class WordKouseiController < ApplicationController
     source_text = params[:source_text]
 
     # API呼び出し
-    api = Api::YahooKousei.new
-    result = api.exec(source_text)
+    api = Api::GooTextApi.new
+    result = api.chrono(source_text)
 
     # JSON
     render :json => result
